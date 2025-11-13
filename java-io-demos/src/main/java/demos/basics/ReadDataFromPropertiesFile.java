@@ -1,6 +1,7 @@
 package demos.basics;
 
 import java.io.FileInputStream;
+import java.util.Enumeration;
 import java.util.Properties;
 
 public class ReadDataFromPropertiesFile {
@@ -8,6 +9,13 @@ public class ReadDataFromPropertiesFile {
 	public static void main(String[] args) throws Exception {
 		
 		System.out.println(System.getProperty("user.dir"));
+		
+		Properties properties = System.getProperties();
+		Enumeration en = properties.elements();
+		while(en.hasMoreElements()) {
+			System.out.println(en.nextElement());
+			
+		}
 		
 		
 		//FileInputStream fis = new FileInputStream("H:\\SelfStudy\\MyGitHubRepo\\core-java-repo\\java-io-demos\\src\\main\\resources\\sample.properties");
